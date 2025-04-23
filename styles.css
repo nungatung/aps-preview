@@ -6,6 +6,11 @@ body {
   background-color: #fff;
   color: #333;
 }
+
+
+html {
+  scroll-behavior: smooth;
+}
   
 
 /* Header & Navigation */
@@ -36,11 +41,17 @@ body {
 /* Navigation Links */
 .Navbar-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-right: 40px; /* Adjusted margin for spacing */
 }
+
+.Navbar-links-wrapper {
+  margin-right: 40px; /* Pushes links to the left */
+}
+
   
 .Navbar-item a {
   text-decoration: none;
@@ -84,11 +95,12 @@ body {
   display: none;
   position: absolute;
   background-color: white;
-  list-style: none;
   padding: 0.5rem 1rem;
   margin-top: 0.5rem;
   border: 1px solid #ddd;
+  border-radius: 7px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  list-style: none;
 }
   
 .dropdown:hover .dropdown-menu {
@@ -112,18 +124,17 @@ body {
 /* Hero Section */
 .hero {
   min-height: 100vh;
-  background: url('images/cape-town.jpg') center center /cover no-repeat;
+  background: url("images/cape-town.jpg") center center /cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 5%;
   color: white;
   position: default;
+  vertical-align: bottom;
   
 }
 
-
-  
 .hero-text {
   font-family: "Nunito Sans", sans-serif;
   max-width: 600px;
@@ -142,12 +153,7 @@ body {
   color: #00BFA6;
 }
   
-.hero-text p {
-  font-size: 1.2rem;
-  color: #333; /* Softer white for paragraph text */
-  max-width: 500px;
-  line-height: 1.6;
-}
+
   
 /* Services Section */
 #services {
@@ -190,9 +196,10 @@ body {
 
 .service-box img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures image fills the space nicely */
-  flex-grow: 1;
+  height: 320px; 
+  object-fit: cover;
+  
+  
 }
 
 .service-box:hover img {
@@ -316,6 +323,13 @@ body {
   color: #333;
 }
 
+.value-box Ul {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
   
 /* Footer Styles */
 .Footer {
@@ -431,4 +445,126 @@ body {
 }
   
 
+/* Who We Are Section */
+
+.who-we-are-banner {
+  font-family: "Nunito sans", sans-serif;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #213444;
   
+}
+
+.who-we-are-banner h1 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 2.8rem;
+  color: #f1f3f8;
+  text-transform: uppercase;
+}
+
+.who-we-are-banner h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #00BFA6;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.who-we-are-banner p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #f1f3f8;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto 25px;
+}
+
+.team-member {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.team-image img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  margin-right: 40px;
+}
+
+.team-info {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.team-info h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.team-info h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.team-info p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.team-info li {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Make stacked on smaller screens */
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-image img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.hero-image-section {
+  background: url('images/Office_.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5%;
+    color: white;
+    position: default;
+    min-height: 100vh;
+}
+  
+
+
+
+
+
+
