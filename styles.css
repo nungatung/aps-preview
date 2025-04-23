@@ -1,0 +1,570 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+  
+
+/* Header & Navigation */
+  
+.Header {
+  background-color: white;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+  
+.Navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+/* Logo Styling */
+.Navbar-logo .logo {
+  height: 115px;
+  width: auto;
+  display: block;
+  margin-right: auto;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  
+} 
+  
+/* Navigation Links */
+.Navbar-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 40px; /* Adjusted margin for spacing */
+}
+
+.Navbar-links-wrapper {
+  margin-right: 40px; /* Pushes links to the left */
+}
+
+  
+.Navbar-item a {
+  text-decoration: none;
+  color: #1f2f3f;
+  font-weight: 500;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  display: inline-block;
+  position: relative; /* Required for the ::after pseudo-element */
+  padding: 12px ;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Underline Animation */
+.Navbar-item a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* Start with no underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #00BFA6; /* Underline color */
+  transition: width 0.3s ease; /* Smooth animation for the underline */
+}
+
+.Navbar-item a:hover::after {
+  width: 100%; /* Expand the underline to full width on hover */
+}
+
+.Navbar-item a:hover {
+  color: #00BFA6; /* Change text color on hover */
+}
+  
+/* Dropdown Arrow Styling */
+.Navbar-item .arrow {
+  font-size: 1.3rem;
+}
+  
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  list-style: none;
+}
+  
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+  
+/* Dropdown Link */
+.dropdown-menu li a {
+  color: #1f2f3f;
+  display: block;
+  padding: 0.4rem 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+  
+.dropdown-menu li a:hover {
+  color: #00BFA6;
+}
+  
+  
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: url("images/cape-town.jpg") center center /cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5%;
+  color: white;
+  position: default;
+  vertical-align: bottom;
+  
+}
+
+.hero-text {
+  font-family: "Nunito Sans", sans-serif;
+  max-width: 600px;
+  
+}
+  
+.hero-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+  
+.hero-text h1 span {
+  color: #00BFA6;
+}
+  
+
+  
+/* Services Section */
+#services {
+  text-align: center;
+  padding: 50px 5%;
+}
+
+#services h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #003366;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  padding: 20px 0;
+  line-height: 1.2;
+  text-align: left; /* Align the header to the left */
+  
+}
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+/* Service Box Styling */
+.service-box {
+  position: relative;
+  height: 300px; /* Adjust as needed for consistent sizing */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Push overlay to bottom */
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-box img {
+  width: 100%;
+  height: 320px; 
+  object-fit: cover;
+  
+  
+}
+
+.service-box:hover img {
+  transform: scale(1.05); /* Zoom in on hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-overlay {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1c2b39;
+  color: #fff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  z-index: 2;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+
+.service-box:hover .service-overlay {
+  background-color: #00BFA6; /* Highlight color on hover */
+}
+
+.service-overlay h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+/* Banner Section */
+.banner-section {
+  background-color: #213444;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.banner-content p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto 25px;
+}
+
+.cta-button {
+  background-color: white;
+  color: #213444;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #00BFA6;
+  color: white;
+}
+
+  
+
+ 
+ /* About Box Layout */
+.about-values {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 260px;
+    
+}
+  
+.value-box {
+  background: white;
+  border-left: 4px solid #003366;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  max-width: 80%; 
+  margin-left: 25px; 
+  margin-top: 30px; 
+  
+  
+}
+
+.value-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+  
+.value-box h4 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+  
+.value-box p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.value-box Ul {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+  
+/* Footer Styles */
+.Footer {
+  background-color: #213444;
+  padding: 60px 2rem 40px;
+  color: #fff;
+  border-top: 1px solid #444;
+}
+
+.Footer .Container {
+  max-width: 1100px; /* Optional: control width of inner content */
+  margin: 0 auto;
+  padding: 0 2rem; /* Add horizontal spacing inside the content */
+  display: flex;
+  flex-direction: column;
+}
+  
+.Footer .column-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+  
+.Footer .title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.Footer a:hover {
+  color: #00BFA6;
+}
+  
+.Footer-contact {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 17px;
+}
+  
+.Footer-contact > li {
+  margin-bottom: 10px;
+}
+  
+.Footer-contact-link {
+  text-decoration: none;
+  color: white;
+}
+
+  /* Styling for the large-arrow */
+.large-arrow {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s ease-in-out;
+  padding-right: 45px; /* Space between text and arrow */
+}
+
+.large-arrow:hover {
+  transform: scale(1.09); /* Slightly enlarge the arrow on hover */
+  cursor: pointer; 
+}
+  
+.large-arrow svg {
+  width: 140%;
+  height: 140%;
+}
+  
+.Footer-strapline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Space between text and arrow */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+  
+.Footer-legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  color: #ccc;
+  font-size: 0.9rem;
+  font-family: "Nunito Sans", sans-serif;
+}
+  
+.Footer-legal-links a {
+  margin-left: 20px;
+  font-size: 0.875rem;
+  color: #ccc;
+  font-family: "Nunito Sans", sans-serif;
+  margin-top: 40px;
+  padding-top: 20px;
+  text-decoration: none;
+    
+}
+  
+.Footer-legal-links a:hover {
+  color: #00dca7;
+}
+  
+  /* Grid Helpers */
+.Grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+  
+
+/* Who We Are Section */
+
+.who-we-are-banner {
+  font-family: "Nunito sans", sans-serif;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #213444;
+  
+}
+
+.who-we-are-banner h1 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 2.8rem;
+  color: #f1f3f8;
+  text-transform: uppercase;
+}
+
+.who-we-are-banner h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #00BFA6;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.who-we-are-banner p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #f1f3f8;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto 25px;
+}
+
+.team-member {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.team-image img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  margin-right: 40px;
+}
+
+.team-info {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.team-info h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.team-info h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.team-info p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.team-info li {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Make stacked on smaller screens */
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-image img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.hero-image-section {
+  background: url('images/Office_.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5%;
+    color: white;
+    position: default;
+    min-height: 100vh;
+}
+  
+
+
+
+
+
+
