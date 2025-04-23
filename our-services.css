@@ -1,0 +1,387 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+  }
+
+
+html {
+    scroll-behavior: smooth;
+  }
+    
+  
+  /* Header & Navigation */
+    
+.Header {
+    background-color: white;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #eee;
+}
+    
+.Navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    
+  /* Logo Styling */
+.Navbar-logo .logo {
+    height: 115px;
+    width: auto;
+    display: block;
+    margin-right: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    
+} 
+    
+  /* Navigation Links */
+.Navbar-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 40px; /* Adjusted margin for spacing */
+}
+
+.Navbar-links-wrapper {
+    margin-right: 40px; /* Pushes links to the left */
+  }
+    
+.Navbar-item a {
+    text-decoration: none;
+    color: #1f2f3f;
+    font-weight: 500;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.5rem;
+    display: inline-block;
+    position: relative; /* Required for the ::after pseudo-element */
+    padding: 12px ;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+  
+  /* Underline Animation */
+.Navbar-item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0; /* Start with no underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: #00BFA6; /* Underline color */
+    transition: width 0.3s ease; /* Smooth animation for the underline */
+}
+  
+.Navbar-item a:hover::after {
+    width: 100%; /* Expand the underline to full width on hover */
+}
+  
+.Navbar-item a:hover {
+    color: #00BFA6; /* Change text color on hover */
+}
+    
+  /* Dropdown Arrow Styling */
+.Navbar-item .arrow {
+    font-size: 1.3rem;
+}
+    
+  /* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+    
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+    
+  /* Dropdown Link */
+.dropdown-menu li a {
+    color: #1f2f3f;
+    display: block;
+    padding: 0.4rem 0;
+    text-decoration: none;
+    white-space: nowrap;
+}
+    
+.dropdown-menu li a:hover {
+    color: #00BFA6;
+}
+    
+    
+  /* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: url('images/Local Government Advisory.jpg') center center /cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5%;
+    color: white;
+    position: default;
+    
+}
+
+
+/* Banner Section */
+.banner-section {
+    background-color: #213444;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.banner-heading {
+  font-family: "Nunito Sans", sans-serif;
+  position: relative;
+  color: #f1f3f8;
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.banner-heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #00BFA6;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+  
+  
+.banner-content p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 25px;
+}
+
+
+
+/* Footer Styles */
+.Footer {
+    background-color: #213444;
+    padding: 60px 2rem 40px;
+    color: #fff;
+    border-top: 1px solid #444;
+}
+  
+.Footer .Container {
+    max-width: 1100px; /* Optional: control width of inner content */
+    margin: 0 auto;
+    padding: 0 2rem; /* Add horizontal spacing inside the content */
+    display: flex;
+    flex-direction: column;
+}
+    
+.Footer .column-title {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+    
+.Footer .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+  
+.Footer a:hover {
+    color: #00BFA6;
+}
+    
+.Footer-contact {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 17px;
+}
+    
+.Footer-contact > li {
+    margin-bottom: 10px;
+}
+    
+.Footer-contact-link {
+    text-decoration: none;
+    color: white;
+}
+  
+    /* Styling for the large-arrow */
+.large-arrow {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease-in-out;
+    padding-right: 45px; /* Space between text and arrow */
+}
+  
+.large-arrow:hover {
+    transform: scale(1.09); /* Slightly enlarge the arrow on hover */
+    cursor: pointer; 
+}
+    
+.large-arrow svg {
+    width: 140%;
+    height: 140%;
+}
+    
+.Footer-strapline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Space between text and arrow */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+    
+.Footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0 2rem;
+    color: #ccc;
+    font-size: 0.9rem;
+    font-family: "Nunito Sans", sans-serif;
+}
+    
+.Footer-legal-links a {
+    margin-left: 20px;
+    font-size: 0.875rem;
+    color: #ccc;
+    font-family: "Nunito Sans", sans-serif;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-decoration: none;
+      
+}
+    
+.Footer-legal-links a:hover {
+    color: #00dca7;
+}
+    
+    /* Grid Helpers */
+.Grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+
+/* local-gov-advisory.html Content */
+.gov-advisory-content {
+    padding: 60px 20px;
+    background-color: #fff;
+    color: #1f2f3f;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  
+  .gov-advisory-content .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .gov-advisory-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+  
+  .gov-advisory-content h3 {
+    font-size: 1.5rem;
+    color: #00BFA6;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+  
+  .gov-advisory-content h4 {
+    font-size: 1.3rem;
+    color: #00BFA6;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .gov-advisory-content ul {
+    margin: 0 0 30px 1.2rem;
+    padding-left: 1.2rem;
+  }
+  
+  .gov-advisory-content ul li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+  }
+  
+
+  /* Hero Section for dev-projects-advisory.html */
+body.dev-projects .hero {
+    background: url('images/Development project advisory.png') center center / cover no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5%;
+    color: white;
+    position: default;
+    min-height: 100vh;
+}
+ 
+
+ /* Hero Section for climate-advisory.html */
+body.climate-advisory .hero {
+    background: url('images/Climate Advsiory.jpeg') center center / cover no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5%;
+    color: white;
+    position: default;
+    min-height: 100vh;
+}
+
+
+/* community-approach-wrapper image */
+.community-approach-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  
+  .community-text {
+    flex: 1 1 500px;
+  }
+  
+  .community-image {
+    flex: 1 1 300px;
+    text-align: center;
+  }
+  
+  .community-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
