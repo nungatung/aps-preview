@@ -124,7 +124,7 @@ html {
 /* Hero Section */
 .hero {
   min-height: 100vh;
-  background: url("images/cape-town.jpg") center center /cover no-repeat;
+  background: url("images/Indeximg.jpg") center center /cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -494,14 +494,23 @@ html {
   justify-content: center;
   padding: 40px 20px;
   border-bottom: 1px solid #eee;
+  
 }
 
 .team-image img {
-  max-width: 300px;
-  width: 100%;
-  border-radius: 10px;
-  margin-right: 40px;
+  width: 250px; 
+  height: 250px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%; 
+  margin-right: 25px; 
+  transform: translate(-50px) ;
+  background-color: #00BFA6; 
+  box-shadow: 0 4px 8px rgba(0, 191, 166, 0.4); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  
 }
+
 
 .team-info {
   flex: 1 1 400px;
