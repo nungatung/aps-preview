@@ -72,7 +72,7 @@ html {
     bottom: 0;
     width: 0; /* Start with no underline */
     height: 2px; /* Thickness of the underline */
-    background-color: #00BFA6; /* Underline color */
+    background-color: #70C0BA; /* Underline color */
     transition: width 0.3s ease; /* Smooth animation for the underline */
 }
   
@@ -81,7 +81,7 @@ html {
 }
   
 .Navbar-item a:hover {
-    color: #00BFA6; /* Change text color on hover */
+    color: #70C0BA; /* Change text color on hover */
 }
     
   /* Dropdown Arrow Styling */
@@ -116,7 +116,7 @@ html {
 }
     
 .dropdown-menu li a:hover {
-    color: #00BFA6;
+    color: #70C0BA;
 }
     
     
@@ -159,7 +159,7 @@ html {
   display: block;
   width: 80px;
   height: 4px;
-  background-color: #00BFA6;
+  background-color: #70C0BA;
   margin: 10px auto 0;
   border-radius: 2px;
 }
@@ -207,7 +207,7 @@ html {
 }
   
 .Footer a:hover {
-    color: #00BFA6;
+    color: #70C0BA;
 }
     
 .Footer-contact {
@@ -277,9 +277,6 @@ html {
       
 }
     
-.Footer-legal-links a:hover {
-    color: #00dca7;
-}
     
     /* Grid Helpers */
 .Grid {
@@ -311,7 +308,7 @@ html {
   
   .gov-advisory-content h3 {
     font-size: 1.5rem;
-    color: #00BFA6;
+    color: #70C0BA;
     margin-top: 50px;
     margin-bottom: 20px;
     font-weight: 800;
@@ -319,7 +316,7 @@ html {
   
   .gov-advisory-content h4 {
     font-size: 1.3rem;
-    color: #00BFA6;
+    color: #70C0BA;
     margin-top: 40px;
     margin-bottom: 10px;
     font-weight: 700;
@@ -338,7 +335,7 @@ html {
 
   /* Hero Section for dev-projects-advisory.html */
 body.dev-projects .hero {
-    background: url('images/Development project advisory.png') center center / cover no-repeat;
+    background: url('images/devproject.jpg') center center / cover no-repeat;
     display: flex;
     justify-content: flex-start;
     padding: 5%;
@@ -350,7 +347,7 @@ body.dev-projects .hero {
 
  /* Hero Section for climate-advisory.html */
 body.climate-advisory .hero {
-    background: url('images/Climate Advsiory.jpeg') center center / cover no-repeat;
+    background: url('images/wind-turbine.jpg') center center / cover no-repeat;
     display: flex;
     justify-content: flex-start;
     padding: 5%;
@@ -385,3 +382,125 @@ body.climate-advisory .hero {
     border-radius: 10px;
   }
   
+
+  /* Mobile Optimization */
+
+  @media (max-width: 768px) {
+    /* Navbar */
+    .Navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .Navbar-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      margin-right: 0;
+    }
+  
+    .Navbar-item a {
+      font-size: 1.2rem;
+      padding: 8px 0;
+    }
+  
+    .Navbar-logo .logo {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+  
+    /* Dropdown */
+    .dropdown-menu {
+      position: relative;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+    }
+  
+    /* Hero Section */
+    .hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    /* Banner */
+    .banner-heading {
+      font-size: 2rem;
+    }
+  
+    .banner-content p {
+      font-size: 1.1rem;
+      padding: 0 10px;
+    }
+  
+    /* Footer */
+    .Footer {
+      padding: 40px 1.5rem 20px;
+    }
+  
+    .Footer .Container {
+      padding: 0;
+    }
+  
+    .Footer-legal {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+      padding: 0;
+    }
+  
+    .Footer-legal-links {
+      margin-top: 10px;
+    }
+  
+    /* Grid & Image Wrappers */
+    .Grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .community-approach-wrapper {
+      flex-direction: column;
+    }
+  
+    .community-text,
+    .community-image {
+      flex: 1 1 100%;
+    }
+  
+    /* Gov Advisory Content */
+    .gov-advisory-content {
+      padding: 40px 15px;
+    }
+  
+    .gov-advisory-content h3,
+    .gov-advisory-content h4 {
+      font-size: 1.3rem;
+    }
+  
+    .gov-advisory-content p,
+    .gov-advisory-content ul li {
+      font-size: 1rem;
+    }
+  
+    /* Hero Section on service pages */
+    body.dev-projects .hero,
+    body.climate-advisory .hero {
+      padding: 30px 15px;
+      text-align: center;
+      justify-content: center;
+    }
+  
+    /* Adjust container paddings */
+    .banner-section,
+    .gov-advisory-content .container {
+      padding: 0 15px;
+    }
+  }
+  /* End of mobile optimization */

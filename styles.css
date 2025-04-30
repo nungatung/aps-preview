@@ -11,7 +11,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
-  
+
 
 /* Header & Navigation */
   
@@ -62,7 +62,7 @@ html {
   display: inline-block;
   position: relative; /* Required for the ::after pseudo-element */
   padding: 12px ;
-  transition: color 0.3s ease; /* Smooth color transition */
+  transition: color 0.6s ease; /* Smooth color transition */
 }
 
 /* Underline Animation */
@@ -73,7 +73,8 @@ html {
   bottom: 0;
   width: 0; /* Start with no underline */
   height: 2px; /* Thickness of the underline */
-  background-color: #00BFA6; /* Underline color */
+  background-color: #70C0BA; /* Underline color */
+  color: #fff;
   transition: width 0.3s ease; /* Smooth animation for the underline */
 }
 
@@ -82,7 +83,7 @@ html {
 }
 
 .Navbar-item a:hover {
-  color: #00BFA6; /* Change text color on hover */
+  color: #70C0BA; /* Change text color on hover */
 }
   
 /* Dropdown Arrow Styling */
@@ -117,7 +118,7 @@ html {
 }
   
 .dropdown-menu li a:hover {
-  color: #00BFA6;
+  color: #70C0BA;
 }
   
   
@@ -150,7 +151,7 @@ html {
 }
   
 .hero-text h1 span {
-  color: #00BFA6;
+  color: #70C0BA;
 }
   
 
@@ -177,14 +178,15 @@ html {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 10px;
 }
 
 
 /* Service Box Styling */
 .service-box {
   position: relative;
-  height: 300px; /* Adjust as needed for consistent sizing */
+  height: 300px; 
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* Push overlay to bottom */
@@ -231,7 +233,7 @@ html {
 
 
 .service-box:hover .service-overlay {
-  background-color: #00BFA6; /* Highlight color on hover */
+  background-color: #70C0BA; 
 }
 
 .service-overlay h3 {
@@ -271,7 +273,7 @@ html {
 }
 
 .cta-button:hover {
-  background-color: #00BFA6;
+  background-color: #70C0BA;
   color: white;
 }
 
@@ -362,7 +364,7 @@ html {
 }
 
 .Footer a:hover {
-  color: #00BFA6;
+  color: #7C8DB3;
 }
   
 .Footer-contact {
@@ -431,10 +433,7 @@ html {
   text-decoration: none;
     
 }
-  
-.Footer-legal-links a:hover {
-  color: #00dca7;
-}
+
   
   /* Grid Helpers */
 .Grid {
@@ -472,7 +471,7 @@ html {
   display: block;
   width: 80px;
   height: 4px;
-  background-color: #00BFA6;
+  background-color: #70C0BA;
   margin: 10px auto 0;
   border-radius: 2px;
 }
@@ -487,78 +486,112 @@ html {
   margin: 0 auto 25px;
 }
 
-.team-member {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+/* Team Member Section */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
   justify-content: center;
   padding: 40px 20px;
-  border-bottom: 1px solid #eee;
-  
 }
+
+.team-member {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 transparent;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.team-member:nth-child(3) {
+  grid-column: 1 / 2; /* Force Walter Jamieson's section to the left */
+}
+
+
+
+.team-member:hover {
+  box-shadow: 0 6px 20px rgba(0, 191, 166, 0.3);
+}
+
+
+.team-member.walter .team-image img {
+  transform: translateY(-180px) ;
+}
+
 
 .team-image img {
-  width: 250px; 
-  height: 250px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
   object-fit: cover;
-  object-position: center top;
-  border-radius: 50%; 
-  margin-right: 25px; 
-  transform: translate(-50px) ;
-  background-color: #00BFA6; 
-  box-shadow: 0 4px 8px rgba(0, 191, 166, 0.4); 
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-right: 20px;
+  transform: translateY(-240px) ;
   
-}
-
-
-.team-info {
-  flex: 1 1 400px;
-  max-width: 600px;
 }
 
 .team-info h2 {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 1.6rem;
   color: #003366;
+  margin-bottom: 8px;
 }
 
 .team-info h3 {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #003366;
+  font-size: 1.2rem;
+  color: #70C0BA;
+  margin-bottom: 12px;
 }
 
-.team-info p {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-}
-
+.team-info p,
 .team-info li {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1rem;
   color: #333;
-  margin-bottom: 10px;
+  line-height: 1.8;
+  margin-bottom: 8px;
 }
 
-/* Make stacked on smaller screens */
-@media (max-width: 768px) {
+.team-member.jerome {
+  align-items: flex-start; /* Align content to the top */
+  padding-top: 30px;       /* Reduce top padding */
+}
+
+.team-member.jerome .team-image img {
+  transform: translateY(180px); /* Slight lift, not too far */
+  margin-top: 0;
+}
+
+.team-member.jerome .team-info h2 {
+  margin-top: 0; /* Pull header up */
+}
+
+.team-member.jerome .team-info {
+  padding-top: 10px;
+  line-height: 1.9;
+}
+
+
+
+/* Responsive Fix */
+@media (max-width: 900px) {
   .team-member {
+    width: 100%;
     flex-direction: column;
     text-align: center;
   }
-
+  
   .team-image img {
-    margin-right: 0;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
   }
 }
+
+
 
 .hero-image-section {
   background: url('images/Office_.jpg') center center / cover no-repeat;
@@ -572,6 +605,127 @@ html {
 }
   
 
+/* Mobile Optimization */
+
+@media (max-width: 768px) {
+  /* Navigation */
+  .Navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Navbar-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .Navbar-logo .logo {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  .dropdown-menu li a {
+    padding: 10px 0;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 40px 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  /* Services */
+  #services h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .service-box img {
+    height: 240px;
+  }
+
+  /* Banner Section */
+  .banner-content p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+
+  /* About Values */
+  .value-box {
+    max-width: 100%;
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  /* Team Members */
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 15px;
+  }
+
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-image img {
+    margin: 0 auto 20px;
+    transform: none;
+    width: 180px;
+    height: 180px;
+  }
+
+  .team-member .team-info {
+    padding: 0;
+  }
+
+  /* Footer */
+  .Footer {
+    padding: 40px 1.5rem 20px;
+  }
+
+  .Footer-legal {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 0;
+  }
+
+  .Footer-legal-links {
+    margin-top: 10px;
+  }
+}
+/* End of Mobile Optimization */
 
 
 
