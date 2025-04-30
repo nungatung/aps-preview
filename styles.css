@@ -604,6 +604,79 @@ html {
     min-height: 100vh;
 }
   
+/* Hamvburger Menu for mobile */
+/* Hide by default */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  z-index: 1001;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  background: #333;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+.nav-toggle-label span::before {
+  top: -10px;
+}
+
+.nav-toggle-label span::after {
+  top: 10px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: block;
+  }
+
+  .Navbar-links-wrapper {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .Navbar-links-wrapper {
+    display: block;
+  }
+
+  .Navbar-links {
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    padding: 10px 0;
+  }
+
+  .Navbar-item a {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown-menu li a {
+    padding-left: 30px;
+  }
+}
+
 
 /* Mobile Optimization */
 
