@@ -364,7 +364,7 @@ html {
 }
 
 .Footer a:hover {
-  color: #7C8DB3;
+  color: #70C0BA;
 }
   
 .Footer-contact {
@@ -576,23 +576,6 @@ html {
   line-height: 1.9;
 }
 
-
-
-/* Responsive Fix */
-@media (max-width: 900px) {
-  .team-member {
-    width: 100%;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .team-image img {
-    margin: 0 auto 20px;
-  }
-}
-
-
-
 .hero-image-section {
   background: url('images/Office_.jpg') center center / cover no-repeat;
     display: flex;
@@ -609,6 +592,7 @@ html {
 .nav-toggle {
   display: none;
 }
+
 
 .nav-toggle-label {
   display: none;
@@ -639,43 +623,6 @@ html {
   top: 10px;
 }
 
-@media (max-width: 768px) {
-  .nav-toggle-label {
-    display: block;
-  }
-
-  .Navbar-links-wrapper {
-    display: none;
-    width: 100%;
-  }
-
-  .nav-toggle:checked + .nav-toggle-label + .Navbar-links-wrapper {
-    display: block;
-  }
-
-  .Navbar-links {
-    flex-direction: column;
-    width: 100%;
-    background: white;
-    padding: 10px 0;
-  }
-
-  .Navbar-item a {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-  }
-
-  .dropdown-menu {
-    position: relative;
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0;
-  }
-
-  .dropdown-menu li a {
-    padding-left: 30px;
-  }
-}
 
 
 /* Mobile Optimization */
