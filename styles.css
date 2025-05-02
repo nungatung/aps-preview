@@ -587,48 +587,9 @@ html {
     min-height: 100vh;
 }
   
-/* Hamvburger Menu for mobile */
-/* Hide by default */
-.nav-toggle {
-  display: none;
-}
-
-
-.nav-toggle-label {
-  display: none;
-  cursor: pointer;
-  width: 30px;
-  height: 25px;
-  position: relative;
-  z-index: 1001;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  content: '';
-  background: #333;
-  height: 3px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  transition: 0.3s ease;
-}
-
-.nav-toggle-label span::before {
-  top: -10px;
-}
-
-.nav-toggle-label span::after {
-  top: 10px;
-}
-
-
-
 /* Mobile Optimization */
-
 @media (max-width: 768px) {
-  /* Navigation */
+  /* Navbar */
   .Navbar-container {
     flex-direction: column;
     align-items: flex-start;
@@ -636,9 +597,9 @@ html {
 
   .Navbar-links {
     flex-direction: column;
-    gap: 0.5rem;
-    margin-right: 0;
     width: 100%;
+    gap: 10px;
+    margin-top: 10px;
   }
 
   .Navbar-logo .logo {
@@ -646,87 +607,53 @@ html {
     margin-bottom: 10px;
   }
 
-  .dropdown-menu {
-    position: relative;
-    box-shadow: none;
-    border: none;
-    padding: 0;
+  .nav-toggle-label {
+    display: block;
   }
 
-  .dropdown-menu li a {
-    padding: 10px 0;
+  .nav-toggle:checked + .nav-toggle-label + .Navbar-links-wrapper {
+    display: block;
   }
 
-  /* Hero Section */
+  /* Hero */
   .hero {
+    flex-direction: column;
+    text-align: center;
     padding: 40px 20px;
-    justify-content: center;
-    text-align: center;
   }
 
-  .hero-text h1 {
+  .hero h1 {
     font-size: 2rem;
   }
 
-  /* Services */
-  #services h2 {
+  /* Banner */
+  .banner-heading {
     font-size: 2rem;
-    text-align: center;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-box {
-    width: 100%;
-    height: auto;
-  }
-
-  .service-box img {
-    height: 240px;
-  }
-
-  /* Banner Section */
   .banner-content p {
     font-size: 1.1rem;
     padding: 0 10px;
   }
 
-  .cta-button {
-    font-size: 1rem;
-    padding: 10px 16px;
-  }
-
-  /* About Values */
-  .value-box {
-    max-width: 100%;
-    margin-left: 0;
-    padding: 15px;
-  }
-
   /* Team Members */
   .team-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 30px 15px;
+    padding: 20px;
   }
 
   .team-member {
     flex-direction: column;
-    align-items: center;
     text-align: center;
+    align-items: center;
   }
 
   .team-image img {
-    margin: 0 auto 20px;
-    transform: none;
-    width: 180px;
-    height: 180px;
+    margin-bottom: 20px;
   }
 
-  .team-member .team-info {
-    padding: 0;
+  .team-info h2 {
+    margin-top: 10px;
   }
 
   /* Footer */
@@ -744,8 +671,43 @@ html {
   .Footer-legal-links {
     margin-top: 10px;
   }
+
+  /* Community Image Layout */
+  .community-approach-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .community-text,
+  .community-image {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  /* Advisory Content */
+  .gov-advisory-content {
+    padding: 40px 15px;
+  }
+
+  .gov-advisory-content h3,
+  .gov-advisory-content h4 {
+    font-size: 1.3rem;
+  }
+
+  .gov-advisory-content p,
+  .gov-advisory-content ul li {
+    font-size: 1rem;
+  }
+
+  /* Hero Section Images for Service Pages */
+  body.dev-projects .hero,
+  body.climate-advisory .hero {
+    padding: 30px 15px;
+    text-align: center;
+    justify-content: center;
+  }
 }
-/* End of Mobile Optimization */
+
 
 
 
