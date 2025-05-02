@@ -418,162 +418,160 @@ body.climate-advisory .hero {
 }
 
 @media (max-width: 768px) {
-  .nav-toggle-label {
-    display: block;
+  /* General Body Adjustments */
+  body {
+    font-size: 14px; /* Reduce base font size for smaller screens */
+    padding: 0 10px; /* Add padding for better spacing */
   }
 
-  .Navbar-links-wrapper {
-    display: none;
-    width: 100%;
-  }
-
-  .nav-toggle:checked + .nav-toggle-label + .Navbar-links-wrapper {
-    display: block;
+  /* Navbar Adjustments */
+  .Navbar-container {
+    flex-direction: column; /* Stack logo and links vertically */
+    align-items: flex-start;
   }
 
   .Navbar-links {
-    flex-direction: column;
+    flex-direction: column; /* Stack links vertically */
     width: 100%;
-    background: white;
-    padding: 10px 0;
+    gap: 10px; /* Add spacing between links */
+    margin-right: 0;
   }
 
   .Navbar-item a {
-    padding: 10px 20px;
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Adjust font size for readability */
+    padding: 10px 20px; /* Add padding for touch targets */
   }
 
+  .Navbar-logo .logo {
+    height: 80px; /* Reduce logo size */
+    margin-bottom: 10px;
+  }
+
+  /* Dropdown Menu Adjustments */
   .dropdown-menu {
     position: relative;
-    background-color: transparent;
+    width: 100%;
+    border: none;
     box-shadow: none;
     padding: 0;
   }
 
   .dropdown-menu li a {
-    padding-left: 30px;
+    padding-left: 30px; /* Add spacing for dropdown items */
+  }
+
+  /* Hero Section Adjustments */
+  .hero {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px; /* Adjust padding */
+  }
+
+  .hero h1 {
+    font-size: 2rem; /* Reduce heading size */
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 1rem; /* Adjust paragraph size */
+    padding: 0 10px;
+  }
+
+  /* Banner Section Adjustments */
+  .banner-section {
+    padding: 40px 20px; /* Reduce padding */
+  }
+
+  .banner-heading {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  .banner-content p {
+    font-size: 1.1rem; /* Adjust paragraph size */
+    padding: 0 10px;
+  }
+
+  /* Services Section Adjustments */
+  .services-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Add spacing between items */
+  }
+
+  .service-box {
+    height: 250px; /* Reduce height */
+  }
+
+  .service-box img {
+    height: 250px; /* Match the reduced height */
+  }
+
+  .service-overlay {
+    height: 50px; /* Adjust overlay height */
+  }
+
+  /* Community Approach Section Adjustments */
+  .community-approach-wrapper {
+    flex-direction: column; /* Stack content vertically */
+    gap: 20px; /* Reduce spacing */
+  }
+
+  .community-text,
+  .community-image {
+    flex: 1 1 100%; /* Full width for both text and image */
+  }
+
+  .community-image img {
+    max-width: 100%; /* Ensure image scales properly */
+    height: auto;
+  }
+
+  /* Footer Adjustments */
+  .Footer {
+    padding: 40px 1.5rem 20px; /* Reduce padding */
+  }
+
+  .Footer .Container {
+    padding: 0;
+  }
+
+  .Footer-legal {
+    flex-direction: column; /* Stack legal links vertically */
+    gap: 10px; /* Add spacing between items */
+    text-align: center;
+    padding: 0;
+  }
+
+  .Footer-legal-links {
+    margin-top: 10px;
+  }
+
+  /* Gov Advisory Content Adjustments */
+  .gov-advisory-content {
+    padding: 40px 15px; /* Adjust padding */
+  }
+
+  .gov-advisory-content h3,
+  .gov-advisory-content h4 {
+    font-size: 1.3rem; /* Adjust heading sizes */
+  }
+
+  .gov-advisory-content p,
+  .gov-advisory-content ul li {
+    font-size: 1rem; /* Adjust paragraph and list item sizes */
+  }
+
+  /* Hero Section on Service Pages */
+  body.dev-projects .hero,
+  body.climate-advisory .hero {
+    padding: 30px 15px; /* Adjust padding */
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Adjust Container Paddings */
+  .banner-section,
+  .gov-advisory-content .container {
+    padding: 0 15px;
   }
 }
-
-
-  /* Mobile Optimization */
-
-  @media (max-width: 768px) {
-    /* Navbar */
-    .Navbar-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .Navbar-links {
-      flex-direction: column;
-      width: 100%;
-      gap: 10px;
-      margin-right: 0;
-    }
-  
-    .Navbar-item a {
-      font-size: 1.2rem;
-      padding: 8px 0;
-    }
-  
-    .Navbar-logo .logo {
-      height: 80px;
-      margin-bottom: 10px;
-    }
-  
-    /* Dropdown */
-    .dropdown-menu {
-      position: relative;
-      width: 100%;
-      border: none;
-      box-shadow: none;
-    }
-  
-    /* Hero Section */
-    .hero {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-  
-    .hero h1 {
-      font-size: 2rem;
-    }
-  
-    /* Banner */
-    .banner-heading {
-      font-size: 2rem;
-    }
-  
-    .banner-content p {
-      font-size: 1.1rem;
-      padding: 0 10px;
-    }
-  
-    /* Footer */
-    .Footer {
-      padding: 40px 1.5rem 20px;
-    }
-  
-    .Footer .Container {
-      padding: 0;
-    }
-  
-    .Footer-legal {
-      flex-direction: column;
-      gap: 10px;
-      text-align: center;
-      padding: 0;
-    }
-  
-    .Footer-legal-links {
-      margin-top: 10px;
-    }
-  
-    /* Grid & Image Wrappers */
-    .Grid {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .community-approach-wrapper {
-      flex-direction: column;
-    }
-  
-    .community-text,
-    .community-image {
-      flex: 1 1 100%;
-    }
-  
-    /* Gov Advisory Content */
-    .gov-advisory-content {
-      padding: 40px 15px;
-    }
-  
-    .gov-advisory-content h3,
-    .gov-advisory-content h4 {
-      font-size: 1.3rem;
-    }
-  
-    .gov-advisory-content p,
-    .gov-advisory-content ul li {
-      font-size: 1rem;
-    }
-  
-    /* Hero Section on service pages */
-    body.dev-projects .hero,
-    body.climate-advisory .hero {
-      padding: 30px 15px;
-      text-align: center;
-      justify-content: center;
-    }
-  
-    /* Adjust container paddings */
-    .banner-section,
-    .gov-advisory-content .container {
-      padding: 0 15px;
-    }
-  }
-  /* End of mobile optimization */
