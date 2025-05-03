@@ -382,135 +382,106 @@ body.climate-advisory .hero {
     border-radius: 10px;
   }
   
-  /* Hamburger Menu for mobile */
-  /* Hide by default */
-.nav-toggle {
-  display: none;
-}
-
-.nav-toggle-label {
-  display: none;
-  cursor: pointer;
-  width: 30px;
-  height: 25px;
-  position: relative;
-  z-index: 1001;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  content: '';
-  background: #333;
-  height: 3px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  transition: 0.3s ease;
-}
-
-.nav-toggle-label span::before {
-  top: -10px;
-}
-
-.nav-toggle-label span::after {
-  top: 10px;
-}
-
+/* =============================== */
+/* 📱 Mobile Optimization Styles 📱 */
+/* =============================== */
 @media (max-width: 768px) {
-  /* General Body Adjustments */
-  body {
-    font-size: 14px; /* Reduce base font size for smaller screens */
-    padding: 0 10px; /* Add padding for better spacing */
-  }
-
-  /* Navbar Adjustments */
-  .Navbar-container {
-    flex-direction: column; /* Stack logo and links vertically */
-    align-items: flex-start;
-  }
-
   .Navbar-links {
-    flex-direction: column; /* Stack links vertically */
-    width: 100%;
-    gap: 10px; /* Add spacing between links */
-    margin-right: 0;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 100%; /* Just below navbar */
+    right: -22%;
+    width: 280px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 9999; /* Force above everything */
+    border-radius: 8px; /* Optional for design */
+   }
+
+  .Navbar-links.active {
+    display: flex;
   }
 
+  .hamburger {
+    flex: 0 0 auto;
+    margin-left: 35px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #1f2f3f;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .Navbar-container {
+    position: relative; /* Ensure it creates a stacking context */
+    z-index: 1001; /* Above background */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  
   .Navbar-item a {
-    font-size: 1.2rem; /* Adjust font size for readability */
-    padding: 10px 20px; /* Add padding for touch targets */
+    font-size: 1.2rem;
+    padding: 10px;
   }
 
+  .Navbar-logo {
+    margin-right: auto;
+  }
+  
   .Navbar-logo .logo {
-    height: 80px; /* Reduce logo size */
-    margin-bottom: 10px;
+    height: 60px; /* Adjust logo height for mobile */
+    width: auto;
+    margin: -10px;
+    transform: translateX(-20px); /* Reset transform for mobile */
   }
 
-  /* Dropdown Menu Adjustments */
+ 
   .dropdown-menu {
     position: relative;
-    width: 100%;
     border: none;
+    margin: 0;
+    padding: 0.5rem 0 0.5rem 1rem;
     box-shadow: none;
-    padding: 0;
+    background-color: transparent;
   }
 
   .dropdown-menu li a {
-    padding-left: 30px; /* Add spacing for dropdown items */
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 1px;
+    
   }
 
-  /* Hero Section Adjustments */
   .hero {
-    flex-direction: column; /* Stack content vertically */
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px; /* Adjust padding */
+    position: relative; /* Ensure the hero section doesn't overlap the dropdown */
+    z-index: 1;
+    min-height: 60vh; /* Adjust height for mobile */
+    padding: 20px; /* Add padding for better spacing */
+    text-align: center; /* Center-align content for mobile */
   }
 
   .hero h1 {
-    font-size: 2rem; /* Reduce heading size */
+    font-size: 2rem; /* Adjust font size for mobile */
     line-height: 1.3;
   }
 
   .hero p {
-    font-size: 1rem; /* Adjust paragraph size */
-    padding: 0 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 10px 0;
   }
 
-  /* Banner Section Adjustments */
-  .banner-section {
-    padding: 40px 20px; /* Reduce padding */
-  }
-
-  .banner-heading {
-    font-size: 2rem; /* Reduce heading size */
-  }
-
-  .banner-content p {
-    font-size: 1.1rem; /* Adjust paragraph size */
-    padding: 0 10px;
-  }
-
-  /* Services Section Adjustments */
-  .services-grid {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 20px; /* Add spacing between items */
-  }
-
-  .service-box {
-    height: 250px; /* Reduce height */
-  }
-
-  .service-box img {
-    height: 250px; /* Match the reduced height */
-  }
-
-  .service-overlay {
-    height: 50px; /* Adjust overlay height */
-  }
-
-  /* Community Approach Section Adjustments */
+  /* Community Section */
   .community-approach-wrapper {
     flex-direction: column; /* Stack content vertically */
     gap: 20px; /* Reduce spacing */
@@ -518,37 +489,53 @@ body.climate-advisory .hero {
 
   .community-text,
   .community-image {
-    flex: 1 1 100%; /* Full width for both text and image */
+    width: 100%; /* Full width for both text and image */
+    text-align: center;
   }
 
   .community-image img {
-    max-width: 100%; /* Ensure image scales properly */
+    max-width: 90%; /* Ensure image scales properly */
     height: auto;
+    border-radius: 10px;
   }
 
-  /* Footer Adjustments */
+  /* Footer */
   .Footer {
-    padding: 40px 1.5rem 20px; /* Reduce padding */
+    padding: 40px 1rem; /* Reduce padding for mobile */
+    text-align: center; /* Center-align footer content */
   }
 
   .Footer .Container {
-    padding: 0;
+    padding: 0 1rem;
   }
 
   .Footer-legal {
     flex-direction: column; /* Stack legal links vertically */
-    gap: 10px; /* Add spacing between items */
     text-align: center;
-    padding: 0;
+    gap: 10px;
   }
 
   .Footer-legal-links {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  /* Gov Advisory Content Adjustments */
+  /* Banner Section */
+  .banner-heading {
+    font-size: 2rem; /* Adjust font size for mobile */
+    margin-bottom: 10px;
+  }
+
+  .banner-content p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  /* Advisory Content */
   .gov-advisory-content {
-    padding: 40px 15px; /* Adjust padding */
+    padding: 40px 15px; /* Adjust padding for mobile */
   }
 
   .gov-advisory-content h3,
@@ -560,18 +547,5 @@ body.climate-advisory .hero {
   .gov-advisory-content ul li {
     font-size: 1rem; /* Adjust paragraph and list item sizes */
   }
-
-  /* Hero Section on Service Pages */
-  body.dev-projects .hero,
-  body.climate-advisory .hero {
-    padding: 30px 15px; /* Adjust padding */
-    text-align: center;
-    justify-content: center;
-  }
-
-  /* Adjust Container Paddings */
-  .banner-section,
-  .gov-advisory-content .container {
-    padding: 0 15px;
-  }
 }
+

@@ -587,163 +587,189 @@ html {
     min-height: 100vh;
 }
   
-/* Hamvburger Menu for mobile */
-/* Hide by default */
-.nav-toggle {
-  display: none;
-}
-
-
-.nav-toggle-label {
-  display: none;
-  cursor: pointer;
-  width: 30px;
-  height: 25px;
-  position: relative;
-  z-index: 1001;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  content: '';
-  background: #333;
-  height: 3px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  transition: 0.3s ease;
-}
-
-.nav-toggle-label span::before {
-  top: -10px;
-}
-
-.nav-toggle-label span::after {
-  top: 10px;
-}
-
-/* Mobile Optimization */
+/* =============================== */
+/* 📱 Mobile Optimization Styles 📱 */
+/* =============================== */
 @media (max-width: 768px) {
-  /* General Body and Layout Adjustments */
-  body {
-    font-size: 14px; /* Reduce base font size for smaller screens */
-    padding: 0 10px; /* Add padding for better spacing */
-  }
-
-  /* Navbar Adjustments */
-  .nav-toggle-label {
-    display: block; /* Show hamburger menu */
-  }
-
-  .Navbar-links-wrapper {
-    display: none; /* Hide links by default */
-    width: 100%;
-  }
-
-  .nav-toggle:checked + .nav-toggle-label + .Navbar-links-wrapper {
-    display: block; /* Show links when hamburger menu is toggled */
-  }
-
   .Navbar-links {
-    flex-direction: column; /* Stack links vertically */
-    width: 100%;
-    background: white;
-    padding: 10px 0;
+   display: none;
+   flex-direction: column;
+   background-color: white;
+   position: absolute;
+   top: 100%; /* Just below navbar */
+   right: -22%;
+   width: 280px;
+   padding: 1rem;
+   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+   z-index: 9999; /* Force above everything */
+   border-radius: 8px; /* Optional for design */
+  }
+
+  .Navbar-logo {
+    margin-right: auto;
+  }
+  
+  .Navbar-logo .logo {
+    height: 60px; /* Adjust logo height for mobile */
+    width: auto;
+    margin: -10px;
+    transform: translateX(-20px); /* Reset transform for mobile */
+  }
+
+  .Navbar-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    flex: 0 0 auto;
+    margin-left: 35px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #1f2f3f;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .Navbar-container {
+    position: relative; /* Ensure it creates a stacking context */
+    z-index: 1001; /* Above background */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
   }
 
   .Navbar-item a {
-    padding: 10px 20px; /* Add padding for touch targets */
-    font-size: 1.2rem; /* Adjust font size */
+    font-size: 1.2rem;
+    padding: 10px;
   }
 
-  /* Hero Section Adjustments */
-  .hero {
-    padding: 20px; /* Reduce padding */
-    text-align: center; /* Center-align text */
+  .dropdown-menu {
+    position: relative;
+    border: none;
+    margin: 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 1px;
+    
+  }
+
+  .hero-image-section {
+    min-height: 60vh; /* Adjust height for mobile */
+    
   }
 
   .hero-text h1 {
-    font-size: 2rem; /* Reduce heading size */
-    line-height: 1.3;
+    font-size: 2.2rem;
+    text-align: center;
   }
 
-  .hero-text p {
-    font-size: 1rem; /* Adjust paragraph size */
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
   }
 
-  /* Services Section Adjustments */
   .services-grid {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 20px; /* Add spacing between items */
+    grid-template-columns: 1fr;
   }
 
   .service-box {
-    height: 250px; /* Reduce height */
+    width: 100%;
+    height: auto;
   }
 
   .service-box img {
-    height: 250px; /* Match the reduced height */
+    height: auto;
   }
 
-  .service-overlay {
-    height: 50px; /* Adjust overlay height */
+  .banner-content p {
+    font-size: 1.1rem;
+    padding: 0 10px;
   }
 
-  /* Team Section Adjustments */
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  .about-values {
+    padding: 0 10px;
+  }
+
+  .value-box {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
   .team-grid {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 30px; /* Reduce spacing */
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .team-member {
-    flex-direction: column; /* Stack image and info vertically */
-    text-align: center; /* Center-align text */
-    padding: 15px; /* Reduce padding */
+    flex-direction: column;
+    text-align: center;
   }
 
   .team-image img {
-    margin: 0 auto 15px; /* Center image and add spacing below */
-    transform: translateY(0); /* Reset any custom positioning */
+    width: 160px;
+    height: 160px;
+    transform: none;
+    margin: 0 auto 20px;
   }
 
-  .team-info h2 {
-    font-size: 1.4rem; /* Adjust heading size */
+  .team-member.jerome .team-image img {
+    transform: translateY(0); 
+    transform: translateX(60px)
   }
 
-  .team-info h3 {
-    font-size: 1rem; /* Adjust subheading size */
+  .team-member.walter .team-image img {
+    transform: none;
+    margin: 0 auto 20px;
   }
 
-  .team-info p {
-    font-size: 0.9rem; /* Adjust paragraph size */
+  .team-info {
+    padding: 0;
   }
 
-  /* Footer Adjustments */
+  .who-we-are-banner h1 {
+    font-size: 2rem;
+  }
+
+  .who-we-are-banner p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
   .Footer {
-    padding: 40px 10px; /* Reduce padding */
-    text-align: center; /* Center-align footer content */
+    padding: 40px 1rem;
   }
 
-  .Footer .Grid {
-    flex-direction: column; /* Stack footer columns vertically */
-    gap: 20px; /* Add spacing between columns */
-  }
-
-  .Footer-contact {
-    font-size: 0.9rem; /* Adjust font size */
+  .Footer .Container {
+    padding: 0 1rem;
   }
 
   .Footer-legal {
-    flex-direction: column; /* Stack legal links vertically */
-    gap: 10px; /* Add spacing between items */
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .Footer-legal-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }
-
-
-
-
-
-
-
-
