@@ -91,7 +91,7 @@ html {
     
   /* Dropdown Menu */
 .dropdown-menu {
-    display: none;
+    display: block;
     position: absolute;
     background-color: white;
     list-style: none;
@@ -100,10 +100,16 @@ html {
     border: 1px solid #ddd;
     border-radius: 7px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
     
 .dropdown:hover .dropdown-menu {
-    display: block;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.1s; /* Add a slight delay before showing */
+  
 }
     
   /* Dropdown Link */
@@ -122,8 +128,9 @@ html {
     
   /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 53vh;
     background: url('images/Local Government Advisory.jpg') center center /cover no-repeat;
+    background-position: 20% 50%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -138,7 +145,7 @@ html {
 .banner-section {
     background-color: #213444;
     color: white;
-    padding: 60px 20px;
+    padding: 20px 20px;
     text-align: center;
 }
 
@@ -302,22 +309,21 @@ html {
   
   .gov-advisory-content p {
     font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
   }
   
   .gov-advisory-content h3 {
     font-size: 1.5rem;
-    color: #70C0BA;
-    margin-top: 50px;
+    color: #003366;
+    margin-top: 30px;
     margin-bottom: 20px;
     font-weight: 800;
   }
   
   .gov-advisory-content h4 {
     font-size: 1.3rem;
-    color: #70C0BA;
-    margin-top: 40px;
+    color: #003366;
+    margin-top: 20px;
     margin-bottom: 10px;
     font-weight: 700;
   }
@@ -331,31 +337,51 @@ html {
     margin-bottom: 10px;
     font-size: 1.05rem;
   }
-  
+
+  .gov-advisory-content h1 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    
+  }
+
+  .gov-advisory-content h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
   /* Hero Section for dev-projects-advisory.html */
-body.dev-projects .hero {
+.dev-projects .hero {
     background: url('images/devproject.jpg') center center / cover no-repeat;
     display: flex;
     justify-content: flex-start;
     padding: 5%;
     color: white;
     position: default;
-    min-height: 100vh;
+    min-height: 53vh;
 }
- 
 
  /* Hero Section for climate-advisory.html */
-body.climate-advisory .hero {
-    background: url('images/wind-turbine.jpg') center center / cover no-repeat;
+.climate-advisory .hero {
+    background: url('images/Climate\ Advsiory.jpeg') center center / cover no-repeat;
     display: flex;
     justify-content: flex-start;
     padding: 5%;
     color: white;
     position: default;
-    min-height: 100vh;
+    min-height: 53vh;
 }
 
+.infrastructure-advisory .hero {
+    background: url('images/infrastructure.jpg') center center / cover no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5%;
+    color: white;
+    position: default;
+    min-height: 52vh;
+}
 
 /* community-approach-wrapper image */
 .community-approach-wrapper {
@@ -381,6 +407,8 @@ body.climate-advisory .hero {
     height: auto;
     border-radius: 10px;
   }
+
+
   
 /* =============================== */
 /* 📱 Mobile Optimization Styles 📱 */
@@ -548,4 +576,5 @@ body.climate-advisory .hero {
     font-size: 1rem; /* Adjust paragraph and list item sizes */
   }
 }
+
 
