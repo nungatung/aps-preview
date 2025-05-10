@@ -46,10 +46,17 @@ html {
   margin: 0;
   padding: 0;
   margin-right: 40px; /* Adjusted margin for spacing */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  z-index: 9999;
+}
+
+.Navbar-links.active {
+  display: flex; /* Show the menu when active */
 }
 
 .Navbar-links-wrapper {
-  margin-right: 40px; /* Pushes links to the left */
+  margin-right: 50px; /* Pushes links to the left */
 }
 
   
@@ -63,6 +70,7 @@ html {
   position: relative; /* Required for the ::after pseudo-element */
   padding: 12px ;
   transition: color 0.6s ease; /* Smooth color transition */
+  white-space: normal;
 }
 
 /* Underline Animation */
@@ -96,6 +104,7 @@ html {
   display: block;
   position: absolute;
   background-color: white;
+  z-index: 1000;
   padding: 0.5rem 1rem;
   margin-top: 0.5rem;
   border: 1px solid #ddd;
@@ -106,6 +115,7 @@ html {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
   
 .dropdown:hover .dropdown-menu {
   opacity: 1;
@@ -130,16 +140,15 @@ html {
   
 /* Hero Section */
 .hero {
-  min-height: 80vh;
-  background: url("images/Indeximg.jpg") left center /cover no-repeat;
-  background-position: 20% 32%;
+  min-height: 65vh;
+  background: url("images/Indeximg.jpg") center bottom /cover no-repeat;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 5%;
   color: white;
-  position: default;
-  vertical-align: bottom;
+  
   
 }
 
@@ -164,93 +173,82 @@ html {
   
 
   
-/* Services Section */
-#services {
-  text-align: center;
-  padding: 50px 5%;
-}
+/* GLOBAL RESET & FONT CONFIG */
 
-#services h2 {
-  font-size: 3rem;
-  margin-bottom: 30px;
-  color: #003366;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 600;
-  padding: 20px 0;
-  line-height: 1.2;
-  text-align: left; /* Align the header to the left */
-  
+:root {
+  --font-family: 'Nunito Sans', sans-serif;
+  --main-color: #003366;
+  --text-color: #213444;
 }
 
 
-/* Service Box Styling */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem 0;
+/* SECTION SPACING */
+section {
+  padding: 50px 10%;
 }
 
-.service-box {
-  position: relative;
-  height: 300px;
+img {
   width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.service-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
-}
-
-.service-box img {
-  width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
-.service-box:hover img {
-  transform: scale(1.08);
-}
-
-.service-box:hover {
- 
-  box-shadow: 0 6px 30px rgba(0, 191, 166, 0.3);
-}
-
-.service-overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 12px;
-  background: rgba(250, 250, 250, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #003366;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
+/* HEADING */
+.heading {
   text-align: center;
-  transition: background 0.3s ease;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  box-sizing: border-box;
 }
 
-.service-box:hover .service-overlay {
-  background: rgba(255, 255, 255, 0.35);
+.heading h1 {
+  font-family: var(--font-family);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--main-color);
 }
 
-.service-overlay h3 {
-  margin: 0;
-  line-height: 1.1;
+
+/* SERVICES GRID */
+.services-content {
+  font-family: var(--font-family);
+  color: var(--main-color);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
+
+/* INDIVIDUAL SERVICE BOX */
+.services-content .box {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 0 2rem 0 0;
+  box-shadow: 10px 11px 11px rgba(14, 55, 54, 0.25);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.services-content .box:hover {
+  background: var(--text-color);
+  color: #fff;
+  transform: scale(1.05); /* 👈 Slight zoom on hover */
+}
+
+
+.services-content .box a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+/* TITLE */
+.services-content .box h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+
 
 
 
@@ -381,7 +379,7 @@ html {
 /* Footer Styles */
 .Footer {
   background-color: #213444;
-  padding: 60px 2rem 40px;
+  padding: 20px 2rem 20px;
   color: #fff;
   border-top: 1px solid #444;
 }
@@ -439,7 +437,7 @@ html {
 }
 
 .large-arrow:hover {
-  transform: scale(1.09); /* Slightly enlarge the arrow on hover */
+  transform: scale(1.12); /* Slightly enlarge the arrow on hover */
   cursor: pointer; 
 }
   
@@ -533,57 +531,64 @@ html {
   margin: 0 auto 25px;
 }
 
-/* Team Member Section */
+
+
+/* Team Grid Layout */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px; /* Space between grid items */
   justify-content: center;
   padding: 40px 20px;
 }
 
+/* Team Member Card */
 .team-member {
   display: flex;
+  flex-direction: row; /* Default: Image and text side by side */
   align-items: center;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 0 transparent;
+  text-align: left; /* Align text to the left */
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+  overflow: hidden; /* Prevent overflow */
 }
-
-.team-member:nth-child(3) {
-  grid-column: 1 / 2; 
-}
-
-
 
 .team-member:hover {
-  box-shadow: 0 6px 20px rgba(0, 191, 166, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 191, 166, 0.3); /* Add hover effect */
 }
 
-
-.team-member.walter .team-image img {
-  transform: translateY(-240px) ;
-}
-
-.team-member.walter .team-info {
-  margin-top: -190px;
-  padding: 20px;
-  line-height: 1.9;
-}
-
-
+/* Team Member Image */
 .team-image img {
-  width: 220px;
-  height: 220px;
+  width: 240px; /* Adjust image size */
+  height: 240px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  margin-right: 20px;
-  transform: translateY(-240px) ;
-  
+  margin-right: 20px; /* Space between image and text */
+  object-position: top center;
+}
+
+.team-member.winston .team-image {
+  transform: translateY(-290px); 
+}
+
+.team-member.walter .team-image {
+  transform: translateY(-290px); 
+}
+
+.team-member.jerome .team-image {
+  transform: translateY(-120px); 
+}
+
+.team-member.debbi .team-image {
+  transform: translateY(-120px); 
+}
+
+/* Team Member Info */
+.team-info {
+  flex: 1; /* Allow text to take up remaining space */
 }
 
 .team-info h2 {
@@ -594,9 +599,7 @@ html {
   margin-bottom: 8px;
 }
 
-
-.team-info p,
-.team-info li {
+.team-info p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1rem;
   color: #333;
@@ -604,23 +607,17 @@ html {
   margin-bottom: 8px;
 }
 
-.team-member.jerome {
-  align-items: flex-start; /* Align content to the top */
-  padding-top: 30px;       /* Reduce top padding */
+.team-info ul {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
 }
 
-.team-member.jerome .team-image img {
-  transform: translateY(240px); /* Slight lift, not too far */
-  margin-top: 0;
+.team-member.debbi .team-info {
+  transform: translateY(-90px);
 }
 
-.team-member.jerome .team-info h2 {
-  margin-top: 0; /* Pull header up */
-}
-
-.team-member.jerome .team-info {
-  padding-top: 10px;
-  line-height: 1.9;
+.team-member.walter .team-info {
+  transform: translateY(-90px);
 }
 
 .hero-image-section {
@@ -637,20 +634,23 @@ html {
 /* =============================== */
 /* 📱 Mobile Optimization Styles 📱 */
 /* =============================== */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .Navbar-links {
-   display: none;
-   flex-direction: column;
-   background-color: white;
-   position: absolute;
-   top: 100%; /* Just below navbar */
-   right: -22%;
-   width: 280px;
-   padding: 1rem;
-   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-   z-index: 9999; /* Force above everything */
-   border-radius: 8px; /* Optional for design */
+    display: none;
+    overflow: visible;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 80vw;
+    max-width: 300px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
   }
+
+  
 
   .Navbar-logo {
     margin-right: auto;
@@ -661,15 +661,6 @@ html {
     width: auto;
     margin: -10px;
     transform: translateX(-20px); /* Reset transform for mobile */
-  }
-
-  .Navbar-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    flex: 0 0 auto;
-    margin-left: 35px;
   }
 
   .hamburger div {
@@ -695,6 +686,17 @@ html {
     padding: 10px;
   }
 
+
+  .Navbar-item a {
+    font-size: 1.2rem;
+    padding: 10px;
+    z-index: 9999;
+  }
+
+ 
+
+  
+
   .dropdown-menu {
     position: relative;
     border: none;
@@ -706,9 +708,9 @@ html {
 
   .dropdown-menu li a {
     color: #333;
-    text-decoration: none;
-    padding: 10px;
-    padding-left: 1px;
+    padding: 0;
+    margin-left: -5px;
+    
     
   }
 
@@ -761,33 +763,58 @@ html {
 
   .team-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    
   }
 
   .team-member {
-    flex-direction: column;
+    flex-direction: column;     /* 👈 Flip layout inside the card */
+    align-items: center;        /* 👈 Center image & text */
     text-align: center;
   }
 
   .team-image img {
-    width: 160px;
-    height: 160px;
-    transform: none;
-    margin: 0 auto 20px;
+    width: 220px; /* Reduce image size for smaller screens */
+    height: 220px;
+    margin: 200px 0 20px; /* Adjust margin for spacing */
+    transform: translateY(25px); /* Reset transform for mobile */
   }
 
-  .team-member.jerome .team-image img {
-    transform: translateY(0); 
-    transform: translateX(60px)
+  .team-member.winston .team-image {
+    transform: translateY(-180px); 
+  }
+  .team-member.walter .team-image {
+    transform: translateY(-180px); 
   }
 
-  .team-member.walter .team-image img {
-    transform: none;
-    margin: 0 auto 20px;
+  .team-member.jerome .team-image {
+    transform: translateY(-180px); 
+  }
+  .team-member.debbi .team-image {
+    transform: translateY(-180px); 
   }
 
-  .team-info {
-    padding: 0;
+  .team-member.jerome .team-info {
+    transform: translateY(-140px);
+  }
+
+  .team-member.winston .team-info {
+    transform: translateY(-140px); 
+  }
+
+  .team-member.walter .team-info {
+    transform: translateY(-140px); 
+  }
+  .team-member.debbi .team-info {
+    transform: translateY(-140px); 
+  }
+
+ 
+  
+
+  .team-info ul {
+    text-align: left;
+    padding-left: 1rem;
+    margin-left: 0;
   }
 
   .who-we-are-banner h1 {

@@ -95,7 +95,7 @@ html {
     position: absolute;
     background-color: white;
     list-style: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     margin-top: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 7px;
@@ -186,7 +186,7 @@ html {
 /* Footer Styles */
 .Footer {
     background-color: #213444;
-    padding: 60px 2rem 40px;
+    padding: 20px 2rem 20px;
     color: #fff;
     border-top: 1px solid #444;
 }
@@ -194,7 +194,7 @@ html {
 .Footer .Container {
     max-width: 1100px; /* Optional: control width of inner content */
     margin: 0 auto;
-    padding: 0 2rem; /* Add horizontal spacing inside the content */
+    padding: 0 1rem; /* Add horizontal spacing inside the content */
     display: flex;
     flex-direction: column;
 }
@@ -244,7 +244,7 @@ html {
 }
   
 .large-arrow:hover {
-    transform: scale(1.09); /* Slightly enlarge the arrow on hover */
+    transform: scale(1.12); /* Slightly enlarge the arrow on hover */
     cursor: pointer; 
 }
     
@@ -351,6 +351,71 @@ html {
     margin-bottom: 10px;
   }
 
+  .advisory-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* ensures it stacks on small screens */
+  }
+  
+  .advisory-column-right {
+    flex: 1 1 300px; /* grow, shrink, base width */
+    min-width: 250px;
+    margin-top: -4px;
+   
+  }
+  
+  .advisory-column-right h2 {
+    font-size: 1.3rem;
+    color: #1f2f3f;
+    font-family: "Nunito Sans", sans-serif;
+    
+  }
+  
+  .advisory-column-right ul {
+    padding-left: 1.2rem;
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 1.6;
+  }
+  
+  .advisory-column-right li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .advisory-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 3.5rem;
+  }
+  
+  .advisory-column {
+    flex: 1 1 300px;
+    min-width: 250px;
+  }
+  
+  .advisory-column h2 {
+    font-size: 1.3rem;
+    color: #1f2f3f;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  
+  .advisory-column ul {
+    padding-left: 1.2rem;
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 1.6;
+  }
+  
+  .advisory-column li {
+    margin-bottom: 0.75rem;
+  }
+  
+
+  
+  
   /* Hero Section for dev-projects-advisory.html */
 .dev-projects .hero {
     background: url('images/devproject.jpg') center center / cover no-repeat;
@@ -416,17 +481,18 @@ html {
 @media (max-width: 768px) {
   .Navbar-links {
     display: none;
+    overflow: visible;
     flex-direction: column;
-    background-color: white;
     position: absolute;
-    top: 100%; /* Just below navbar */
-    right: -22%;
-    width: 280px;
+    top: 100%;
+    right: 0;
+    width: 80vw;
+    max-width: 300px;
     padding: 1rem;
+    background-color: white;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    z-index: 9999; /* Force above everything */
-    border-radius: 8px; /* Optional for design */
-   }
+    border-radius: 8px;
+  }
 
   .Navbar-links.active {
     display: flex;
@@ -574,6 +640,16 @@ html {
   .gov-advisory-content p,
   .gov-advisory-content ul li {
     font-size: 1rem; /* Adjust paragraph and list item sizes */
+  }
+
+  .advisory-flex {
+    flex-direction: column; /* Stack columns vertically */
+    gap: 20px; /* Reduce the gap between columns */
+  }
+
+  .advisory-column,
+  .advisory-column-right {
+    margin-top: 0; /* Remove any top margin */
   }
 }
 
