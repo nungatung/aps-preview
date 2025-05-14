@@ -571,19 +571,19 @@ img {
 }
 
 .team-member.winston .team-image {
-  transform: translateY(-290px); 
+  transform: translateY(-350px); 
 }
 
 .team-member.walter .team-image {
-  transform: translateY(-290px); 
+  transform: translateY(-350px); 
 }
 
 .team-member.jerome .team-image {
-  transform: translateY(-120px); 
+  transform: translateY(-175px); 
 }
 
 .team-member.debbi .team-image {
-  transform: translateY(-120px); 
+  transform: translateY(-175px); 
 }
 
 /* Team Member Info */
@@ -612,12 +612,18 @@ img {
   font-size: 1rem;
 }
 
+.team-info span {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 500;
+}
+
 .team-member.debbi .team-info {
-  transform: translateY(-90px);
+  transform: translateY(-40px);
 }
 
 .team-member.walter .team-info {
-  transform: translateY(-90px);
+  transform: translateY(-60px);
 }
 
 .hero-image-section {
