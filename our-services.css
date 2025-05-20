@@ -29,7 +29,7 @@ html {
     
   /* Logo Styling */
 .Navbar-logo .logo {
-    height: 115px;
+    height: 130px;
     width: auto;
     display: block;
     margin-right: auto;
@@ -131,6 +131,7 @@ html {
     min-height: 53vh;
     background: url('images/Local Government Advisory.jpg') center center /cover no-repeat;
     background-position: 20% 50%;
+    border: 10px solid #fff;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -227,6 +228,12 @@ html {
     
 .Footer-contact > li {
     margin-bottom: 10px;
+}
+
+.Footer-contact-link i,
+.Footer-contact li i {
+  margin-right: 10px;       
+  font-size: 1.2rem;
 }
     
 .Footer-contact-link {

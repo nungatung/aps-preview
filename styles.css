@@ -29,13 +29,11 @@ html {
   
 /* Logo Styling */
 .Navbar-logo .logo {
-  height: 115px;
+  height: 130px;
   width: auto;
   display: block;
   margin-right: auto;
-  transition: transform 0.3s ease-in-out;
   cursor: pointer;
-  
 } 
   
 /* Navigation Links */
@@ -142,6 +140,7 @@ html {
 .hero {
   min-height: 65vh;
   background: url("images/Indeximg.jpg") center bottom /cover no-repeat;
+  border: 10px solid #fff;
   background-position: center;
   display: flex;
   align-items: center;
@@ -170,6 +169,7 @@ html {
 .hero-text h1 span {
   color: #003366; 
 }
+
   
 
   
@@ -421,10 +421,17 @@ img {
 .Footer-contact > li {
   margin-bottom: 10px;
 }
+
+.Footer-contact-link i,
+.Footer-contact li i {
+  margin-right: 10px;       
+  font-size: 1.2rem;
+}
   
 .Footer-contact-link {
   text-decoration: none;
   color: white;
+ 
 }
 
   /* Styling for the large-arrow */
@@ -571,19 +578,19 @@ img {
 }
 
 .team-member.winston .team-image {
-  transform: translateY(-350px); 
+  transform: translateY(-280px); 
 }
 
 .team-member.walter .team-image {
-  transform: translateY(-350px); 
+  transform: translateY(-280px); 
 }
 
 .team-member.jerome .team-image {
-  transform: translateY(-175px); 
+  transform: translateY(-50px); 
 }
 
 .team-member.debbi .team-image {
-  transform: translateY(-175px); 
+  transform: translateY(-50px); 
 }
 
 /* Team Member Info */
@@ -597,6 +604,8 @@ img {
   font-size: 1.6rem;
   color: #003366;
   margin-bottom: 8px;
+  margin-left: -260px;;
+  
 }
 
 .team-info p {
@@ -613,7 +622,7 @@ img {
 }
 
 .team-info span {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: #333;
   font-weight: 500;
 }
@@ -629,6 +638,7 @@ img {
 .hero-image-section {
   background: url('images/Office_.jpg') center center / cover no-repeat;
     display: flex;
+    border: 10px solid #fff;
     align-items: center;
     justify-content: flex-start;
     padding: 5%;
