@@ -138,7 +138,7 @@ html {
   
 /* Hero Section */
 .hero {
-  min-height: 65vh;
+  min-height: 62vh;
   background: url("images/Indeximg.jpg") center bottom /cover no-repeat;
   border: 10px solid #fff;
   background-position: center;
@@ -628,12 +628,18 @@ img {
 }
 
 .team-member.debbi .team-info {
-  transform: translateY(-40px);
+  transform: translateY(-50px);
+}
+
+.team-member.debbi .team-info h2 {
+  transform: translateY(-10px);
 }
 
 .team-member.walter .team-info {
-  transform: translateY(-60px);
+  transform: translateY(-40px);
 }
+
+
 
 .hero-image-section {
   background: url('images/Office_.jpg') center center / cover no-repeat;
@@ -644,7 +650,7 @@ img {
     padding: 5%;
     color: white;
     position: default;
-    min-height: 53vh;
+    min-height: 49.5vh;
 }
   
 /* =============================== */

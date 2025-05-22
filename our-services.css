@@ -128,7 +128,7 @@ html {
     
   /* Hero Section */
 .hero {
-    min-height: 53vh;
+    min-height: 50vh;
     background: url('images/Local Government Advisory.jpg') center center /cover no-repeat;
     background-position: 20% 50%;
     border: 10px solid #fff;
@@ -431,7 +431,7 @@ html {
     padding: 5%;
     color: white;
     position: default;
-    min-height: 53vh;
+    min-height: 50vh;
 }
 
  /* Hero Section for climate-advisory.html */
@@ -442,7 +442,7 @@ html {
     padding: 5%;
     color: white;
     position: default;
-    min-height: 53vh;
+    min-height: 50vh;
 }
 
 .infrastructure-advisory .hero {
@@ -452,7 +452,7 @@ html {
     padding: 5%;
     color: white;
     position: default;
-    min-height: 52vh;
+    min-height: 50vh;
 }
 
 /* community-approach-wrapper image */
