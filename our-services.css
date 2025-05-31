@@ -353,72 +353,13 @@ html {
   }
 
   .gov-advisory-content h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-top: 10px;
     margin-bottom: 10px;
+    color:#003366;
   }
 
-  .advisory-flex {
-    display: flex;
-    justify-content: space-between;
-    gap: 200px;
-    align-items: flex-start;
-    flex-wrap: wrap; /* ensures it stacks on small screens */
-  }
   
-  .advisory-column-right {
-    flex: 1 1 300px; /* grow, shrink, base width */
-    min-width: 250px;
-    margin-top: -4px;
-   
-  }
-  
-  .advisory-column-right h2 {
-    font-size: 1.3rem;
-    color: #1f2f3f;
-    font-family: "Nunito Sans", sans-serif;
-    
-  }
-  
-  .advisory-column-right ul {
-    padding-left: 1.2rem;
-    font-family: "Nunito Sans", sans-serif;
-    line-height: 1.6;
-  }
-  
-  .advisory-column-right li {
-    margin-bottom: 0.75rem;
-  }
-  
-  .advisory-flex {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-top: 3.5rem;
-  }
-  
-  .advisory-column {
-    flex: 1 1 300px;
-    min-width: 250px;
-  }
-  
-  .advisory-column h2 {
-    font-size: 1.3rem;
-    color: #1f2f3f;
-    font-family: "Nunito Sans", sans-serif;
-  }
-  
-  .advisory-column ul {
-    padding-left: 1.2rem;
-    font-family: "Nunito Sans", sans-serif;
-    line-height: 1.6;
-  }
-  
-  .advisory-column li {
-    margin-bottom: 0.75rem;
-  }
   
 
   

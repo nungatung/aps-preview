@@ -586,11 +586,11 @@ img {
 }
 
 .team-member.jerome .team-image {
-  transform: translateY(-50px); 
+  transform: translateY(-200px); 
 }
 
 .team-member.debbi .team-image {
-  transform: translateY(-50px); 
+  transform: translateY(-200px); 
 }
 
 /* Team Member Info */
@@ -622,18 +622,27 @@ img {
 }
 
 .team-info span {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #333;
   font-weight: 500;
 }
 
-.team-member.debbi .team-info {
-  transform: translateY(-50px);
+.team-member.jerome .team-info h3 {
+  font-family: "Nunito Sans", sans-serif;
+  color: #003366;
+  font-size: 1.2rem;
 }
 
-.team-member.debbi .team-info h2 {
-  transform: translateY(-10px);
+.team-member.jerome li span {
+  font-size: 1.15rem;
+  font-weight: bold;
 }
+
+.team-member.debbi .team-info {
+  transform: translateY(-190px);
+}
+
+
 
 .team-member.walter .team-info {
   transform: translateY(-40px);
