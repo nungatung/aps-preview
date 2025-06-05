@@ -124,6 +124,41 @@ html {
 .dropdown-menu li a:hover {
     color: #70C0BA;
 }
+
+@media (max-width: 768px) {
+  .Navbar-item.dropdown .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    transition: opacity 0.3s, max-height 0.3s;
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  .Navbar-item.dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px;
+    transition: opacity 0.3s, max-height 0.3s;
+  }
+}
+
+@media (max-width: 768px) {
+  .Navbar-links {
+    left: 1vw; /* or any value you prefer */
+    right: auto; 
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu li a {
+    white-space: normal;
+    word-break: break-word;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+}
     
     
   /* Hero Section */
@@ -290,6 +325,71 @@ html {
     text-decoration: none;
       
 }
+
+@media (max-width: 768px) {
+  .Footer {
+    padding: 40px 1rem;
+    text-align: center;
+  }
+
+  .Footer .Container {
+    padding: 0 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Footer-strapline {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .Footer-contact {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .Footer-contact li {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .Footer-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .Footer-contact-link i {
+    font-size: 1.2rem;
+  }
+
+  .Footer-legal {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .Footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .Footer-legal-links a {
+    margin: 0;
+    font-size: 0.85rem;
+    padding: 0;
+  }
+}
     
     
     /* Grid Helpers */
@@ -360,20 +460,37 @@ html {
 
   
   /* Climate Advisory Logos */
-.climate-navbar-logos {
+.advisory-logos {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem; /* Much smaller gap */
+  padding: 2rem 1rem;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
-.inline-logo {
-  height: 6em;
-  vertical-align: middle;
-  margin-left: 6px;
-  object-fit: contain;
-  max-width: 240px;
+.advisory-logo {
+  width: 220px; /* Adjust as needed for logo size */
+  height: auto;
+  margin-top: 20px;
+  flex-shrink: 0;
 }
-  
+
+.advisory-logos-content {
+  flex: 1 1 500px;
+  min-width: 350px;
+  max-width: 900px;
+  text-align: left;
+  align-self: flex-start;
+}
+@media (max-width: 768px) {
+  .advisory-logo {
+    display: none !important;
+  }
+}
+
+
 
   
   
@@ -499,24 +616,6 @@ html {
     transform: translateX(-20px); /* Reset transform for mobile */
   }
 
- 
-  .dropdown-menu {
-    position: relative;
-    border: none;
-    margin: 0;
-    padding: 0.5rem 0 0.5rem 1rem;
-    box-shadow: none;
-    background-color: transparent;
-  }
-
-  .dropdown-menu li a {
-    color: #333;
-    text-decoration: none;
-    padding: 10px;
-    padding-left: 1px;
-    
-  }
-
   .hero {
     position: relative; /* Ensure the hero section doesn't overlap the dropdown */
     z-index: 1;
@@ -554,28 +653,7 @@ html {
     border-radius: 10px;
   }
 
-  /* Footer */
-  .Footer {
-    padding: 40px 1rem; /* Reduce padding for mobile */
-    text-align: center; /* Center-align footer content */
-  }
-
-  .Footer .Container {
-    padding: 0 1rem;
-  }
-
-  .Footer-legal {
-    flex-direction: column; /* Stack legal links vertically */
-    text-align: center;
-    gap: 10px;
-  }
-
-  .Footer-legal-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+  
 
   /* Banner Section */
   .banner-heading {

@@ -134,6 +134,42 @@ html {
 .dropdown-menu li a:hover {
   color: #70C0BA;
 }
+
+@media (max-width: 768px) {
+  .Navbar-item.dropdown .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    transition: opacity 0.3s, max-height 0.3s;
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  .Navbar-item.dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px;
+    transition: opacity 0.3s, max-height 0.3s;
+  }
+}
+
+@media (max-width: 768px) {
+  .Navbar-links {
+    left: 1vw; /* or any value you prefer */
+    right: auto; 
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu li a {
+    white-space: normal;
+    word-break: break-word;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+}
+
   
   
 /* Hero Section */
@@ -375,6 +411,49 @@ img {
   transform: translateX(140px)
 }
 
+@media (max-width: 768px) {
+  /* Hide the image container inside community-centric box */
+  .community-centric-box .community-image {
+    display: none;
+  }
+
+  .community-centric-box {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  .community-centric-box h4 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .community-centric-box p,
+  .community-centric-box ul {
+    font-size: 1rem;
+    text-align: left;
+    padding: 0;
+  }
+
+  /* About values responsive spacing */
+  .value-box {
+    max-width: 100%;
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .value-box h4 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .value-box p,
+  .value-box ul {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
   
 /* Footer Styles */
 .Footer {
@@ -482,6 +561,71 @@ img {
   padding-top: 20px;
   text-decoration: none;
     
+}
+
+@media (max-width: 768px) {
+  .Footer {
+    padding: 40px 1rem;
+    text-align: center;
+  }
+
+  .Footer .Container {
+    padding: 0 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Footer-strapline {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .Footer-contact {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .Footer-contact li {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .Footer-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .Footer-contact-link i {
+    font-size: 1.2rem;
+  }
+
+  .Footer-legal {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .Footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .Footer-legal-links a {
+    margin: 0;
+    font-size: 0.85rem;
+    padding: 0;
+  }
 }
 
   
@@ -657,6 +801,124 @@ img {
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  /* 🔹 Team Grid goes single column */
+  .team-grid {
+    grid-template-columns: 1fr;
+    padding: 20px 10px;
+  }
+
+  /* 🔹 Team Member Layout: Stack Vertically */
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .team-image img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 15px;
+    transform: none !important;
+  }
+
+  /* 🔹 Reset image transform overrides */
+  .team-member.winston .team-image,
+  .team-member.walter .team-image,
+  .team-member.jerome .team-image,
+  .team-member.debbi .team-image {
+    transform: none;
+  }
+
+  /* 🔹 Team Info: Full width, no translate, center text */
+  .team-info {
+    transform: none !important;
+    margin-left: 0 !important;
+  }
+
+  .team-info h2 {
+    font-size: 1.4rem;
+    margin: 0 auto 15px;
+    text-align: center;
+    margin-left: 0 !important;
+  }
+
+  .team-info p,
+  .team-info ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .team-info ul {
+    padding-left: 1.2rem;
+  }
+
+  /* Optional: Reduce padding on banner */
+  .who-we-are-banner h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .who-we-are-banner p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* 📱 Tablet: 1-column team grid */
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .team-image img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transform: none !important;
+  }
+
+  .team-info {
+    margin-left: 0 !important;
+    transform: none !important;
+    padding: 0 15px;
+  }
+
+  .team-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .team-info p,
+  .team-info ul {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+  .team-info ul {
+    padding-left: 1.5rem;
+  }
+
+  /* Optional flag image scale-down for tablet */
+  .team-info .flag-icon {
+    width: 20px;
+    height: auto;
+  }
+}
+
 
 
 .hero-image-section {
@@ -674,33 +936,32 @@ img {
 /* =============================== */
 /* 📱 Mobile Optimization Styles 📱 */
 /* =============================== */
-@media (max-width: 992px) {
-  .Navbar-links {
-    display: none;
-    overflow: visible;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 80vw;
-    max-width: 300px;
+@media (max-width: 768px) {
+  /* 🔹 NAVBAR */
+  .Navbar-container {
+    position: relative;
+    z-index: 1001;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
     padding: 1rem;
-    background-color: white;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    border-radius: 8px;
   }
-
-  
 
   .Navbar-logo {
     margin-right: auto;
   }
-  
+
   .Navbar-logo .logo {
-    height: 60px; /* Adjust logo height for mobile */
+    height: 60px;
     width: auto;
     margin: -10px;
-    transform: translateX(-20px); /* Reset transform for mobile */
+    transform: translateX(-20px);
+  }
+
+  .hamburger {
+    flex: 0 0 auto;
+    margin-left: 35px;
   }
 
   .hamburger div {
@@ -711,21 +972,21 @@ img {
     transition: all 0.3s ease;
   }
 
-  .Navbar-container {
-    position: relative; /* Ensure it creates a stacking context */
-    z-index: 1001; /* Above background */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  .Navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 80vw;
+    max-width: 300px;
     padding: 1rem;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: visible;
+    z-index: 9999;
   }
-
-  .Navbar-item a {
-    font-size: 1.2rem;
-    padding: 10px;
-  }
-
 
   .Navbar-item a {
     font-size: 1.2rem;
@@ -733,35 +994,11 @@ img {
     z-index: 9999;
   }
 
- 
-
   
 
-  .dropdown-menu {
-    position: relative;
-    border: none;
-    margin: 0;
-    padding: 0.5rem 0 0.5rem 1rem;
-    box-shadow: none;
-    background-color: transparent;
-  }
-
-  .dropdown-menu li a {
-    color: #333;
-    padding: 0;
-    margin-left: -5px;
-    
-    
-  }
-
+  /* 🔹 HERO */
   .hero-image-section {
-    min-height: 60vh; /* Adjust height for mobile */
-    
-  }
-
-  .hero-text h1 {
-    font-size: 2.2rem;
-    text-align: center;
+    min-height: 60vh;
   }
 
   .hero-text {
@@ -769,6 +1006,12 @@ img {
     text-align: center;
   }
 
+  .hero-text h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  /* 🔹 SERVICES */
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -782,6 +1025,7 @@ img {
     height: auto;
   }
 
+  /* 🔹 CTA & BANNER */
   .banner-content p {
     font-size: 1.1rem;
     padding: 0 10px;
@@ -801,89 +1045,4 @@ img {
     max-width: 100%;
   }
 
-  .team-grid {
-    grid-template-columns: 1fr;
-    
-  }
-
-  .team-member {
-    flex-direction: column;     /* 👈 Flip layout inside the card */
-    align-items: center;        /* 👈 Center image & text */
-    text-align: center;
-  }
-
-  .team-image img {
-    width: 220px; /* Reduce image size for smaller screens */
-    height: 220px;
-    margin: 200px 0 20px; /* Adjust margin for spacing */
-    transform: translateY(25px); /* Reset transform for mobile */
-  }
-
-  .team-member.winston .team-image {
-    transform: translateY(-180px); 
-  }
-  .team-member.walter .team-image {
-    transform: translateY(-180px); 
-  }
-
-  .team-member.jerome .team-image {
-    transform: translateY(-180px); 
-  }
-  .team-member.debbi .team-image {
-    transform: translateY(-180px); 
-  }
-
-  .team-member.jerome .team-info {
-    transform: translateY(-140px);
-  }
-
-  .team-member.winston .team-info {
-    transform: translateY(-140px); 
-  }
-
-  .team-member.walter .team-info {
-    transform: translateY(-140px); 
-  }
-  .team-member.debbi .team-info {
-    transform: translateY(-140px); 
-  }
-
- 
-  
-
-  .team-info ul {
-    text-align: left;
-    padding-left: 1rem;
-    margin-left: 0;
-  }
-
-  .who-we-are-banner h1 {
-    font-size: 2rem;
-  }
-
-  .who-we-are-banner p {
-    font-size: 1rem;
-    padding: 0 15px;
-  }
-
-  .Footer {
-    padding: 40px 1rem;
-  }
-
-  .Footer .Container {
-    padding: 0 1rem;
-  }
-
-  .Footer-legal {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .Footer-legal-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
 }
