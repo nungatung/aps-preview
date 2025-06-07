@@ -396,21 +396,6 @@ img {
   color: #333;
 }
 
-.community-centric-box .community-image {
-  max-width: 40vh; /* Reduce the size of the image container */
-  align-items: right; /* Align image to the right */
-  margin-left: auto; /* Push the image to the right */
-  margin-top: -320px; /* Adjust top margin for better alignment */
-  margin-bottom: 20px; /* Add bottom margin for spacing */
-  transform: translateX(-150px);
-}
-
-.community-centric-box .community-image img {
-  max-width: 100%; 
-  height: 30vh; 
-  border-radius: 8px; 
-  transform: translateX(140px)
-}
 
 @media (max-width: 768px) {
   /* Hide the image container inside community-centric box */
