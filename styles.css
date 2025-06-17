@@ -769,9 +769,8 @@ img {
 }
 
 .team-member.debbi .team-info {
-  transform: translateY(-190px);
+  transform: translateY(-100px);
 }
-
 
 
 .team-member.walter .team-info {
