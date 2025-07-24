@@ -275,6 +275,20 @@ html {
     text-decoration: none;
     color: white;
 }
+
+/* Flag Image */
+.Flag-container {
+  display: flex;
+  justify-content: center;
+  transform: translateX(15px);
+}
+
+.Flag-image {
+  width: 100px;
+  height: 70px;
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
   
     /* Styling for the large-arrow */
 .large-arrow {
@@ -388,6 +402,11 @@ html {
     margin: 0;
     font-size: 0.85rem;
     padding: 0;
+  }
+
+  .Flag-container {
+    margin-top: 1rem;
+    transform: translateX(0);
   }
 }
     

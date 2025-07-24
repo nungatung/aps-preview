@@ -499,6 +499,7 @@ img {
  
 }
 
+
   /* Styling for the large-arrow */
 .large-arrow {
   display: inline-block;
@@ -549,7 +550,92 @@ img {
     
 }
 
-@media (max-width: 768px)  {
+/* Flag Image */
+.Flag-container {
+  display: flex;
+  justify-content: center;
+  transform: translateX(15px);
+}
+
+.Flag-image {
+  width: 100px;
+  height: 70px;
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 701px) and (max-width: 1024px) {
+.Footer {
+    padding: 40px 1rem;
+    text-align: center;
+  }
+
+  .Footer .Container {
+    padding: 0 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Footer-strapline {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .Footer-contact {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .Footer-contact li {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .Footer-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .Footer-contact-link i {
+    font-size: 1.2rem;
+  }
+
+  .Footer-legal {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .Footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .Footer-legal-links a {
+    margin: 0;
+    font-size: 0.85rem;
+    padding: 0;
+  }
+
+  .Flag-container {
+    margin-top: 1rem;
+    transform: translateX(0);
+  }
+}
+
+
+@media (max-width: 700px)  {
   .Footer {
     padding: 40px 1rem;
     text-align: center;
@@ -611,6 +697,11 @@ img {
     margin: 0;
     font-size: 0.85rem;
     padding: 0;
+  }
+
+  .Flag-container {
+    margin-top: 1rem;
+    transform: translateX(0);
   }
 }
 
@@ -786,7 +877,7 @@ img {
   object-fit: cover;
 }
 
-@media (max-width: 1280px) and (min-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 701px) {
   .team-grid {
     grid-template-columns: 1fr; /* Stack vertically on tablets for better readability */
     padding: 30px 20px;
@@ -852,7 +943,7 @@ img {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   /* 🔹 Team Grid goes single column */
   .team-grid {
     grid-template-columns: 1fr;
@@ -937,7 +1028,117 @@ img {
 /* =============================== */
 /* 📱 Mobile Optimization Styles 📱 */
 /* =============================== */
-@media (max-width: 768px)   {
+@media (max-width: 700px)   {
+  /* 🔹 NAVBAR */
+  .Navbar-container {
+    position: relative;
+    z-index: 1001;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 1rem;
+  }
+
+  .Navbar-logo {
+    margin-right: auto;
+  }
+
+  .Navbar-logo .logo {
+    height: 60px;
+    width: auto;
+    margin: -10px;
+    transform: translateX(-20px);
+  }
+
+  .hamburger {
+    flex: 0 0 auto;
+    margin-left: 35px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #1f2f3f;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .Navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 80vw;
+    max-width: 300px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: visible;
+    z-index: 9999;
+  }
+
+  .Navbar-item a {
+    font-size: 1.2rem;
+    padding: 10px;
+    z-index: 9999;
+  }
+
+  
+
+  /* 🔹 HERO */
+  .hero-image-section {
+    min-height: 60vh;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  /* 🔹 SERVICES */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .service-box img {
+    height: auto;
+  }
+
+  /* 🔹 CTA & BANNER */
+  .banner-content p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  .about-values {
+    padding: 0 10px;
+  }
+
+  .value-box {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1024px) {
   /* 🔹 NAVBAR */
   .Navbar-container {
     position: relative;
