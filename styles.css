@@ -12,21 +12,31 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===== SCROLL FADE-IN ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(1);
+}
 
 /* Header & Navigation */
-  
 .Header {
   background-color: white;
   padding: 1rem 2rem;
   border-bottom: 1px solid #eee;
 }
-  
+
 .Navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-  
+
 /* Logo Styling */
 .Navbar-logo .logo {
   height: 130px;
@@ -34,8 +44,13 @@ html {
   display: block;
   margin-right: auto;
   cursor: pointer;
-} 
-  
+  transition: transform 0.3s ease;
+}
+
+.Navbar-logo .logo:hover {
+  transform: scale(1.02);
+}
+
 /* Navigation Links */
 .Navbar-links {
   display: flex;
@@ -43,21 +58,20 @@ html {
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-right: 40px; /* Adjusted margin for spacing */
+  margin-right: 50px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   z-index: 9999;
 }
 
 .Navbar-links.active {
-  display: flex; /* Show the menu when active */
+  display: flex;
 }
 
 .Navbar-links-wrapper {
-  margin-right: 50px; /* Pushes links to the left */
+  margin-right: 50px;
 }
 
-  
 .Navbar-item a {
   text-decoration: none;
   color: #1f2f3f;
@@ -65,10 +79,16 @@ html {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
   display: inline-block;
-  position: relative; /* Required for the ::after pseudo-element */
-  padding: 12px ;
-  transition: color 0.6s ease; /* Smooth color transition */
+  position: relative;
+  padding: 12px;
+  transition: color 0.3s ease;
   white-space: normal;
+  /* Remove all borders and outlines */
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Underline Animation */
@@ -77,28 +97,40 @@ html {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 0; /* Start with no underline */
-  height: 2px; /* Thickness of the underline */
-  background-color: #70C0BA; /* Underline color */
-  color: #fff;
-  transition: width 0.3s ease; /* Smooth animation for the underline */
+  width: 0;
+  height: 2px;
+  background-color: #70C0BA;
+  transition: width 0.3s ease;
 }
 
 .Navbar-item a:hover::after {
-  width: 100%; /* Expand the underline to full width on hover */
+  width: 100%;
 }
 
 .Navbar-item a:hover {
-  color: #70C0BA; /* Change text color on hover */
+  color: #70C0BA;
 }
-  
+
+/* Remove focus/active states that create boxes */
+.Navbar-item a:focus,
+.Navbar-item a:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
 /* Dropdown Arrow Styling */
 .Navbar-item .arrow {
   font-size: 1.3rem;
+  transition: transform 0.3s ease;
 }
 
+.Navbar-item.dropdown.open .arrow {
+  transform: rotate(180deg);
+}
 
-  /* Dropdown Menu */
+/* Dropdown Menu */
 .dropdown-menu {
   display: block;
   position: absolute;
@@ -112,17 +144,18 @@ html {
   list-style: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  min-width: 200px;
 }
 
-  
 .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
-  transition-delay: 0.1s; /* Add a slight delay before showing */
-  
+  transform: translateY(0);
+  transition-delay: 0.1s;
 }
-  
+
 /* Dropdown Link */
 .dropdown-menu li a {
   color: #1f2f3f;
@@ -130,13 +163,25 @@ html {
   padding: 0.4rem 0;
   text-decoration: none;
   white-space: nowrap;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
-  
+
 .dropdown-menu li a:hover {
   color: #70C0BA;
 }
 
-@media (max-width: 768px)   {
+.dropdown-menu li a:focus,
+.dropdown-menu li a:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+@media (max-width: 768px) {
   .Navbar-item.dropdown .dropdown-menu {
     opacity: 0;
     visibility: hidden;
@@ -147,22 +192,19 @@ html {
     border: none;
     background: transparent;
   }
+  
   .Navbar-item.dropdown.open .dropdown-menu {
     opacity: 1;
     visibility: visible;
     max-height: 500px;
     transition: opacity 0.3s, max-height 0.3s;
   }
-}
 
-@media (max-width: 768px)  {
   .Navbar-links {
-    left: 1vw; /* or any value you prefer */
-    right: auto; 
+    left: 1vw;
+    right: auto;
   }
-}
 
-@media (max-width: 768px) {
   .dropdown-menu li a {
     white-space: normal;
     word-break: break-word;
@@ -355,7 +397,6 @@ img {
 }
 
 .value-box:hover {
-  transform: scale(1.02);
   box-shadow: 0 6px 20px rgba(0, 191, 166, 0.3);
 }
   
@@ -426,7 +467,9 @@ img {
     max-width: 100%;
     margin-left: 0;
     padding: 15px;
+
   }
+
 
   .value-box h4 {
     font-size: 1.3rem;
@@ -452,7 +495,7 @@ img {
 .Footer .Container {
   max-width: 1100px; /* Optional: control width of inner content */
   margin: 0 auto;
-  padding: 0 2rem; /* Add horizontal spacing inside the content */
+  padding: 0 0.2rem; /* Add horizontal spacing inside the content */
   display: flex;
   flex-direction: column;
 }
@@ -530,7 +573,7 @@ img {
   
 .Footer-legal {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 2rem;
   padding: 0 2rem;
@@ -539,16 +582,7 @@ img {
   font-family: "Nunito Sans", sans-serif;
 }
   
-.Footer-legal-links a {
-  margin-left: 20px;
-  font-size: 0.875rem;
-  color: #ccc;
-  font-family: "Nunito Sans", sans-serif;
-  margin-top: 40px;
-  padding-top: 20px;
-  text-decoration: none;
-    
-}
+
 
 /* Flag Image */
 .Flag-container {
