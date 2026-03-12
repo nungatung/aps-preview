@@ -1,0 +1,12 @@
+# robots.txt — Anchor Project Solutions
+# https://www.anchorprojectsolutions.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block any CMS admin or private paths (add as needed)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.anchorprojectsolutions.com/sitemap.xml
